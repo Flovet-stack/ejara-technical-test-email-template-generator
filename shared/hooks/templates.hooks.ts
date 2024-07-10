@@ -1,7 +1,7 @@
 import { RootState } from "../lib/store/store";
 import { useAppDispatch, useAppSelector } from "../lib/store/store.hooks";
 
-export const useUsers = () => {
+export const useTemplates = () => {
   const dispatch = useAppDispatch();
   const templateState = useAppSelector((store: RootState) => store.templates);
 

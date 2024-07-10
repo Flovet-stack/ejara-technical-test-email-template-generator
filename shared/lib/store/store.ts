@@ -1,9 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { templatesReducer } from "./features";
+import { defaultReducer, templatesReducer } from "./features";
 
 export const store = configureStore({
   reducer: {
     templates: templatesReducer,
+    default: defaultReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
@@ -13,6 +14,7 @@ export const makeStore = () =>
   configureStore({
     reducer: {
       templates: templatesReducer,
+      default: defaultReducer,
     },
   });
 

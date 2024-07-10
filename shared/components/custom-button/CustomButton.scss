@@ -1,0 +1,41 @@
+@import "@/shared/styles/variables";
+
+.custom-button {
+  padding: 0.5rem 1rem;
+  border-radius: $border-radius;
+  font-size: 14px;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  span {
+    text-transform: capitalize;
+  }
+  .icon {
+    font-size: 1rem;
+  }
+  &:hover {
+    transition-duration: 0.3s;
+  }
+  &:disabled {
+    opacity: 0.75;
+    cursor: not-allowed;
+  }
+
+  /* ------------------------------ primary theme ----------------------------- */
+  // &.primary {
+  //   background-color: $primary;
+  //   &:hover:not(:disabled) {
+  //     background-color: $primary-light;
+  //   }
+  //   span,
+  //   .icon {
+  //     color: $white;
+  //   }
+  // }
+}

@@ -1,0 +1,14 @@
+@import "@/shared/styles/variables";
+
+.dashboard-layout {
+  width: 100vw;
+  height: 100vh;
+  background-color: $white-theme-bg;
+  display: flex;
+  .sidebar {
+    width: $sidebar-width;
+    height: inherit;
+    background-color: $white;
+    border-right: 1px solid $white-theme-border;
+  }
+}

@@ -1,8 +1,4 @@
-export const authRoutes = {
-  LOGIN: "/auth/login",
-};
-
-export const dashboardRoutes = {
+export const routes = {
   HOME: "/",
   TEMPLATES: "/templates",
 };

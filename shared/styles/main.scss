@@ -1,0 +1,67 @@
+@import "./utils";
+@import "./variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  //   transition-duration: $transition-duration;
+  list-style-type: none;
+  border: none;
+  outline: none;
+  // border: 1px solid $primary;
+  // cursor: none !important;
+
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  font-size: 16px;
+  color: $primary !important;
+  scroll-behavior: smooth !important;
+  background-color: $secondary-light-bg;
+  @include for-mobile {
+    font-size: 14px;
+  }
+  @include for-extra-small {
+    font-size: 12px;
+  }
+  @include for-extra-large {
+    font-size: 18px;
+  }
+  // @include for-mobile {
+  //   font-size: 12px;
+  // }
+  /* scrollbar ******************************* */
+
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
+
+  /* end scrollbar ******************************* */
+}

@@ -1,0 +1,9 @@
+@import "@/shared/styles/variables";
+
+.dashboard-sidebar {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
