@@ -4,3 +4,5 @@ export * from "./element-plus-icon";
 export * from "./folder-icon";
 export * from "./moon-icon";
 export * from "./more-icon";
+export * from "./setting-icon";
+export * from "./sun-icon";

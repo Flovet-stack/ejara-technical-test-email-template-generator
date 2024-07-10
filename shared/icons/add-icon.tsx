@@ -1,4 +1,4 @@
-export const addIcon = () => (
+export const AddIcon = () => (
   <svg
     width="11"
     height="12"
@@ -9,16 +9,16 @@ export const addIcon = () => (
     <path
       d="M1 6H10"
       stroke="white"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M5.5 10.5V1.5"
       stroke="white"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

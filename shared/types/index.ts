@@ -1,10 +1,8 @@
-import { ReactNode } from "react";
-
 export type Template = any;
 
 export type SidebarLink = {
   name: string;
-  component: ReactNode;
+  component: () => React.JSX.Element;
 };
 
 export type AppTheme = "light" | "dark";

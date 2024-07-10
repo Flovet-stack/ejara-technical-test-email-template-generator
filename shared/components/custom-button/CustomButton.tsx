@@ -1,6 +1,8 @@
 import React, { ReactNode } from "react";
 import { SpinnerCircular } from "spinners-react";
 import "./CustomButton.scss";
+import { useAppSelector } from "@/shared/lib/store/store.hooks";
+import { RootState } from "@/shared/lib/store/store";
 
 export interface CustomButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -11,7 +13,7 @@ export interface CustomButtonProps
   loadingText?: string;
   smallPadding?: boolean;
   loaderPosition?: "left" | "right";
-  theme: "white" | "light" | "dark" | "black";
+  theme: "white" | "light" | "dark" | "black" | "sidebar-button";
   width?: number;
   height?: number;
   fullWidth?: true;
@@ -33,6 +35,9 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   loaderSize,
   ...props
 }) => {
+  const defaultState = useAppSelector((store: RootState) => store.default);
+  const appTheme = defaultState.theme;
+
   const LoadingSpinner: React.FC = () => (
     <SpinnerCircular
       color="white"
@@ -42,9 +47,9 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   return (
     <button
       {...props}
-      className={`custom-button ${smallPadding ? "icon-btn" : ""} ${theme} ${
-        fullWidth ? "w-full" : ""
-      }`}
+      className={`custom-button ${
+        smallPadding ? "icon-btn" : ""
+      } ${appTheme} ${theme} ${fullWidth ? "w-full" : ""}`}
       style={{ width, height }}
     >
       {loading && loaderPosition !== "right" && <LoadingSpinner />}

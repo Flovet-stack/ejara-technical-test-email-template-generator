@@ -12,12 +12,16 @@
   outline: none;
   border: none;
   cursor: pointer;
-  background-color: red;
+  background-color: $light-theme-bg;
   span {
     text-transform: capitalize;
   }
   .icon {
-    font-size: 1rem;
+    display: block;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
   &:hover {
     transition-duration: 0.3s;
@@ -27,15 +31,40 @@
     cursor: not-allowed;
   }
 
-  /* ------------------------------ primary theme ----------------------------- */
-  // &.primary {
-  //   background-color: $primary;
-  //   &:hover:not(:disabled) {
-  //     background-color: $primary-light;
-  //   }
-  //   span,
-  //   .icon {
-  //     color: $white;
-  //   }
-  // }
+  /* ------------------------------ sidebar-button theme ----------------------------- */
+  &.sidebar-button {
+    background-color: $white;
+    width: $sidebar-button-size;
+    height: $sidebar-button-size;
+    &:hover:not(:disabled) {
+      background-color: $light-theme-bg;
+    }
+    span {
+      color: $black;
+    }
+    .icon {
+      color: $black;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &.dark {
+      background-color: $black;
+      &:hover:not(:disabled) {
+        background-color: $dark-theme-bg;
+      }
+      span {
+        color: $black;
+      }
+      .icon {
+        color: $black;
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
 }

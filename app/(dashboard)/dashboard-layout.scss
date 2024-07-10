@@ -1,14 +1,25 @@
 @import "@/shared/styles/variables";
 
 .dashboard-layout {
+  display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: $white-theme-bg;
-  display: flex;
+  background-color: $light-theme-bg;
+  transition-duration: $transition-duration;
+  &.dark {
+    background-color: $black;
+    transition-duration: $transition-duration;
+  }
   .sidebar {
     width: $sidebar-width;
     height: inherit;
     background-color: $white;
-    border-right: 1px solid $white-theme-border;
+    border-right: 1px solid $light-theme-border;
+    transition-duration: $transition-duration;
+    &.dark {
+      border-right: 1px solid $dark-theme-border;
+      transition-duration: $transition-duration;
+      background-color: $black;
+    }
   }
 }
