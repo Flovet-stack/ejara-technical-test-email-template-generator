@@ -23,7 +23,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $primary;
+    background-color: $black;
   }
 }
 
@@ -32,18 +32,12 @@ html {
 }
 
 body {
-  font-size: 16px;
-  color: $primary !important;
+  font-size: 14px !important;
+  color: $black !important;
   scroll-behavior: smooth !important;
-  background-color: $secondary-light-bg;
-  @include for-mobile {
-    font-size: 14px;
-  }
-  @include for-extra-small {
-    font-size: 12px;
-  }
+  background-color: $light-theme-bg;
   @include for-extra-large {
-    font-size: 18px;
+    font-size: 14px !important;
   }
   // @include for-mobile {
   //   font-size: 12px;
@@ -60,7 +54,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $primary;
+    background-color: $black;
   }
 
   /* end scrollbar ******************************* */

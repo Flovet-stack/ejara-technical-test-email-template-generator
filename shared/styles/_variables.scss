@@ -11,5 +11,7 @@ $transition-duration: 0.3s;
 $border-radius: 5px;
 $spacing: 0.5rem;
 $sidebar-button-size: 40px;
+$button-height: 40px;
 $sidebar-width: calc($sidebar-button-size + calc($spacing * 2));
-$header-height: calc($sidebar-button-size + calc($spacing * 2));
+$header-height: calc($button-height + calc($spacing * 2));
+$editor-menu-width: 250px;

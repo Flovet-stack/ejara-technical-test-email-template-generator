@@ -49,7 +49,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       {...props}
       className={`custom-button ${
         smallPadding ? "icon-btn" : ""
-      } ${appTheme} ${theme} ${fullWidth ? "w-full" : ""}`}
+      } ${appTheme} ${theme} ${fullWidth && "w-full"}`}
       style={{ width, height }}
     >
       {loading && loaderPosition !== "right" && <LoadingSpinner />}

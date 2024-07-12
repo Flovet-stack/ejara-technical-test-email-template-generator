@@ -22,4 +22,51 @@
       background-color: $black;
     }
   }
+  .main-content {
+    flex-grow: 1;
+    height: 100%;
+    .editor-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      .editor-menu {
+        min-width: $editor-menu-width;
+        max-width: $editor-menu-width;
+        height: 100%;
+        background-color: $white;
+        overflow-y: auto;
+        transition-duration: $transition-duration;
+        &:first-child {
+          border-right: 1px solid $light-theme-border;
+        }
+        &:last-child {
+          border-left: 1px solid $light-theme-border;
+        }
+      }
+      .editor {
+        flex-grow: 1;
+        height: 100%;
+        background-color: $light-theme-bg;
+        transition-duration: $transition-duration;
+      }
+    }
+    &.dark {
+      .editor-wrapper {
+        .editor-menu {
+          background-color: $black;
+          transition-duration: $transition-duration;
+          &:first-child {
+            border-right: 1px solid $dark-theme-border;
+          }
+          &:last-child {
+            border-left: 1px solid $dark-theme-border;
+          }
+        }
+        .editor {
+          background-color: $dark-theme-bg;
+          transition-duration: $transition-duration;
+        }
+      }
+    }
+  }
 }
