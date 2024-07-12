@@ -1,7 +1,11 @@
 "use client";
 
 import "./dashboard-layout.scss";
-import { DashboardHeader, DashboardSidebar } from "@/shared/components";
+import {
+  DashboardHeader,
+  DashboardSidebar,
+  EditorMenu,
+} from "@/shared/components";
 import { useAppSelector } from "@/shared/lib/store/store.hooks";
 import { RootState } from "@/shared/lib/store/store";
 
@@ -11,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const defaultState = useAppSelector((store: RootState) => store.default);
-  const { theme } = defaultState;
+  const { theme, leftEditorMenu, rightEditorMenu } = defaultState;
 
   return (
     <div className={`dashboard-layout ${theme}`}>
@@ -21,9 +25,9 @@ export default function RootLayout({
       <div className={`main-content ${theme}`}>
         <DashboardHeader />
         <div className="editor-wrapper">
-          <div className="editor-menu"></div>
+          <EditorMenu menu={leftEditorMenu} />
           <div className="editor">{children}</div>
-          <div className="editor-menu"></div>
+          <EditorMenu menu={rightEditorMenu} />
         </div>
       </div>
     </div>

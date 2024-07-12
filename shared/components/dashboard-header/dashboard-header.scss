@@ -1,4 +1,5 @@
 @import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
 
 .dashboard-header {
   width: inherit;
@@ -7,6 +8,9 @@
   display: flex;
   border-bottom: 1px solid $light-theme-border;
   transition-duration: $transition-duration;
+  @include for-extra-large {
+    height: $header-height-large;
+  }
   .corner {
     width: $editor-menu-width;
     padding: 0 $spacing;
@@ -33,7 +37,7 @@
           font-size: 0.85em;
           color: $light-theme-light-text;
           font-weight: 500;
-          margin-bottom: 0.3rem;
+          margin-bottom: 0.15rem;
           transition-duration: $transition-duration;
         }
       }

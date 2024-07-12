@@ -1,12 +1,16 @@
-import { AppTheme } from "@/shared/types";
+import { AppTheme, EDITOR } from "@/shared/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DefaultsState {
   theme: AppTheme;
+  leftEditorMenu: EDITOR;
+  rightEditorMenu: EDITOR;
 }
 
 const initialState: DefaultsState = {
   theme: "light",
+  leftEditorMenu: EDITOR.EDITOR_MENU,
+  rightEditorMenu: EDITOR.EDITOR_DETAILS_MENU,
 };
 
 const defaultsSlice = createSlice({
@@ -19,8 +23,19 @@ const defaultsSlice = createSlice({
     setThemeState(state, { payload }: PayloadAction<AppTheme>) {
       state.theme = payload;
     },
+    setLeftEditorMenuState(state, { payload }: PayloadAction<EDITOR>) {
+      state.leftEditorMenu = payload;
+    },
+    setRightEditorMenuState(state, { payload }: PayloadAction<EDITOR>) {
+      state.rightEditorMenu = payload;
+    },
   },
 });
 
-export const { setDefaultsState, setThemeState } = defaultsSlice.actions;
+export const {
+  setDefaultsState,
+  setThemeState,
+  setLeftEditorMenuState,
+  setRightEditorMenuState,
+} = defaultsSlice.actions;
 export default defaultsSlice.reducer;
