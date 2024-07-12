@@ -25,9 +25,9 @@ export default function RootLayout({
       <div className={`main-content ${theme}`}>
         <DashboardHeader />
         <div className="editor-wrapper">
-          <EditorMenu menu={leftEditorMenu} />
+          <EditorMenu position={"left"} menu={leftEditorMenu} />
           <div className="editor">{children}</div>
-          <EditorMenu menu={rightEditorMenu} />
+          <EditorMenu position={"right"} menu={rightEditorMenu} />
         </div>
       </div>
     </div>

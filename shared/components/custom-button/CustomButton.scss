@@ -96,6 +96,43 @@
     }
   }
 
+  /* ------------------------------ sidebar-section-button theme ----------------------------- */
+  &.sidebar-section-button {
+    background-color: $white;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    &:hover:not(:disabled) {
+      background-color: $light-theme-bg;
+    }
+    .icon {
+      opacity: 1;
+      svg {
+        transform: scale(0.6);
+        path {
+          stroke: $black;
+        }
+      }
+    }
+    &.dark {
+      background-color: $black;
+      &:hover:not(:disabled) {
+        background-color: $dark-theme-bg;
+      }
+      span {
+        color: $black;
+      }
+      .icon {
+        color: $black;
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+
   /* ------------------------------ black theme ----------------------------- */
   &.black {
     background-color: $black;

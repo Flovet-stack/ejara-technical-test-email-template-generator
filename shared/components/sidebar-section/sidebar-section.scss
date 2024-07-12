@@ -1,0 +1,36 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.sidebar-section {
+  transition-duration: 0.3s;
+  .ant-collapse .ant-collapse-item-disabled > .ant-collapse-header {
+    cursor: default !important;
+  }
+  .ant-collapse-header {
+    padding: 0 !important;
+  }
+  .ant-collapse-content {
+    .ant-collapse-content-box {
+      padding: 0 !important;
+    }
+  }
+  .sidebar-section-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: $black;
+  }
+  .child {
+    border-bottom: 1px solid $light-theme-border;
+    transition-duration: 0.3s;
+    padding: 0.5rem;
+  }
+  &.dark {
+    .sidebar-section-title {
+      color: $white;
+    }
+    .child {
+      border-bottom: 1px solid $dark-theme-border;
+      transition-duration: 0.3s;
+    }
+  }
+}

@@ -1,10 +1,27 @@
-export const MoreIcon = () => (
+import React from "react";
+
+interface MoreIconProps {
+  styles?: React.CSSProperties;
+  rotate?: number; // Add a rotate prop
+  width?: number;
+}
+
+export const MoreIcon: React.FC<MoreIconProps> = ({
+  styles,
+  rotate = 0,
+  width,
+}) => (
   <svg
-    width="24"
+    width={width ?? "24"}
     height="24"
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    style={{
+      ...styles,
+      transform: `rotate(${rotate}deg)`,
+      transition: "transform 0.3s ease-in-out",
+    }}
   >
     <path
       d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10Z"

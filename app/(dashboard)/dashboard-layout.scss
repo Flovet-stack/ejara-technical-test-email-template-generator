@@ -36,10 +36,10 @@
         background-color: $white;
         overflow-y: auto;
         transition-duration: $transition-duration;
-        &:first-child {
+        &.left {
           border-right: 1px solid $light-theme-border;
         }
-        &:last-child {
+        &.right {
           border-left: 1px solid $light-theme-border;
         }
       }
@@ -55,10 +55,10 @@
         .editor-menu {
           background-color: $black;
           transition-duration: $transition-duration;
-          &:first-child {
+          &.left {
             border-right: 1px solid $dark-theme-border;
           }
-          &:last-child {
+          &.right {
             border-left: 1px solid $dark-theme-border;
           }
         }

@@ -13,7 +13,13 @@ export interface CustomButtonProps
   loadingText?: string;
   smallPadding?: boolean;
   loaderPosition?: "left" | "right";
-  theme: "white" | "light" | "dark" | "black" | "sidebar-button";
+  theme:
+    | "white"
+    | "light"
+    | "dark"
+    | "black"
+    | "sidebar-button"
+    | "sidebar-section-button";
   width?: number;
   height?: number;
   fullWidth?: true;

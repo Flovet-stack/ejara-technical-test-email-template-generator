@@ -1,5 +1,6 @@
 @import "./utils";
 @import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 * {
   padding: 0;
@@ -12,6 +13,7 @@
   outline: none;
   // border: 1px solid $primary;
   // cursor: none !important;
+  font-family: "Inter", sans-serif;
 
   &::-webkit-scrollbar {
     width: 0.6rem;
@@ -36,6 +38,7 @@ body {
   color: $black !important;
   scroll-behavior: smooth !important;
   background-color: $light-theme-bg;
+  font-family: "Inter", sans-serif;
   @include for-extra-large {
     font-size: 14px !important;
   }
