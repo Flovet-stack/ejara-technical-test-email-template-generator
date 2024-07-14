@@ -11,6 +11,8 @@ import {
 import { useDispatch } from "react-redux";
 import { EDITOR, Template } from "@/shared/types";
 import { v4 as uuidv4 } from "uuid";
+import { InputField } from "../input-field/InputField";
+import "./create-template-form.scss";
 
 interface CreateTemplateFormProps {
   closeModal?: () => void;
@@ -26,6 +28,7 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
   const templatesState = useAppSelector((store: RootState) => store.templates);
   const [saveOptions, setSaveOptions] = useState<boolean>(false);
   const [templateToOpen, setTemplateToOpen] = useState<Template | null>(null);
+  const [error, setError] = useState<string>("");
 
   const { selectedTemplate } = editorState;
   const isDarkTheme = defaultState.theme === "dark";
@@ -46,15 +49,21 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
   };
 
   const onFinish = (values: any) => {
-    const template: Template = {
-      id: uuidv4(),
-      name: values.name,
-    };
-    if (selectedTemplate) {
-      setTemplateToOpen(template);
-      setSaveOptions(true);
+    console.log("🚀 ~ onFinish ~ values:", values);
+    setError("");
+    if (!values.name) {
+      setError("Please enter template name");
     } else {
-      openTemplate(template);
+      const template: Template = {
+        id: uuidv4(),
+        name: values.name,
+      };
+      if (selectedTemplate) {
+        setTemplateToOpen(template);
+        setSaveOptions(true);
+      } else {
+        openTemplate(template);
+      }
     }
   };
 
@@ -75,7 +84,7 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
       }}
     >
       {saveOptions ? (
-        <div>
+        <div className="create-template-form">
           <p className={`${isDarkTheme && "text-white"}`}>
             The <b>{selectedTemplate?.name}</b> template is currently opened. Do
             you want to save your changes before closing it?
@@ -99,20 +108,22 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
         <Form
           form={form}
           name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"
           className="create-template-form w-full"
         >
-          <Form.Item
-            name="name"
-            rules={[{ required: true, message: "Please input your username!" }]}
-            wrapperCol={{ span: 24 }}
-          >
-            <Input placeholder="Enter template name" />
+          <Form.Item name="name" wrapperCol={{ span: 24 }}>
+            <InputField
+              style={{ height: "40px", fontSize: "1em" }}
+              name="name"
+              placeholder="Enter template name"
+              errorMessage={error}
+              onChange={(e) => {
+                setError("");
+              }}
+            />
           </Form.Item>
 
           <div className="w-full flex justify-end">

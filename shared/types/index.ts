@@ -3,6 +3,12 @@ export interface Template {
   name: string;
 }
 
+export interface EditorVariable {
+  id: string;
+  name: string;
+  value: string;
+}
+
 export type SidebarLink = {
   name: string;
   component: () => React.JSX.Element;

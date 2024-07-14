@@ -87,3 +87,165 @@ body {
   justify-content: flex-end;
   gap: $spacing;
 }
+
+form {
+  .field {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    label {
+      display: block;
+      font-size: 0.875em;
+      margin-bottom: 0.1rem;
+      color: $black;
+      text-transform: lowercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    input,
+    select {
+      width: 100%;
+      height: 30px;
+      border: 1px solid $light-theme-border;
+      border-radius: $border-radius;
+      padding: 0 0.7rem;
+      font-size: 0.85em;
+      outline: none !important;
+      // background-color: $input-bg;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      border: 1px solid $light-theme-border;
+      border-radius: $border-radius;
+      padding: 0.7rem;
+      font-size: 1em;
+      background-color: $light-theme-bg;
+      transition-duration: 0.3s;
+    }
+    input,
+    select {
+      &:focus {
+        border-color: $black;
+        transition-duration: 0.3s;
+      }
+    }
+    .error {
+      color: $red;
+      font-size: 1em;
+      margin-top: 0.3rem;
+    }
+    &.error {
+      input,
+      select,
+      textarea {
+        border-color: $red !important;
+        // background-color: $light-red;
+        &::placeholder {
+          color: $red !important;
+        }
+      }
+      .password-sub {
+        border-color: $red !important;
+      }
+      .ant-select-selector {
+        border: 1px solid $red;
+        // background-color: $light-red !important;
+      }
+      .ant-select:hover .ant-select-selector {
+        border-color: $red !important;
+      }
+    }
+    .password-sub {
+      display: flex;
+      // background-color: $input-bg;
+      align-items: center;
+      border: 1px solid $light-theme-border;
+      border-radius: $border-radius;
+      input {
+        border: none;
+      }
+      .toggle {
+        width: 45px;
+        height: 45px;
+        // background-color: $input-bg;
+        transform: scale(0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        color: $black;
+        transition-duration: 0.3s;
+        &:hover {
+          background-color: $black;
+          color: $white;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+    > a {
+      color: $light-theme-light-text;
+      display: inline-block;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      font-size: 1em;
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  input {
+    &:checked + label .provider-select {
+      // background-color: $transluscent-light-green !important;
+      border-color: $black !important;
+      p {
+        color: $black !important;
+      }
+    }
+  }
+  .checkbox {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    > input {
+      display: none;
+      + .box {
+        min-width: 20px;
+        min-height: 20px;
+        border: 2px solid $black;
+        border-radius: $border-radius;
+        position: relative;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          transition-duration: 0.3s;
+        }
+      }
+      &:checked + .box {
+        &::after {
+          background-color: $black;
+          transform: scale(0.8);
+          transition-duration: 0.3s;
+        }
+      }
+    }
+    label {
+      width: fit-content;
+      line-height: 2 !important;
+      margin: 0;
+    }
+  }
+  .ant-form-item .ant-form-item-explain {
+    font-size: 0.85em !important;
+  }
+}

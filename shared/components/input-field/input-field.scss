@@ -1,0 +1,12 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.field-error {
+  padding: 0.5rem;
+  color: $red !important;
+  background-color: lighten($red, 47%);
+  border-radius: $border-radius;
+  margin: 0.3rem 0;
+  height: fit-content;
+  margin-top: 1rem;
+}
