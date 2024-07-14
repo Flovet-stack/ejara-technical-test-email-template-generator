@@ -32,11 +32,11 @@ const templatesSlice = createSlice({
   name: "templates",
   initialState,
   reducers: {
-    TemplatesState(state, { payload }: PayloadAction<TemplatesState>) {
+    setTemplatesState(state, { payload }: PayloadAction<TemplatesState>) {
       state.templates = payload.templates;
     },
   },
 });
 
-export const { TemplatesState } = templatesSlice.actions;
+export const { setTemplatesState } = templatesSlice.actions;
 export default templatesSlice.reducer;

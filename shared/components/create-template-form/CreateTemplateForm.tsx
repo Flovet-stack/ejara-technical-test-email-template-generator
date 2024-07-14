@@ -1,0 +1,125 @@
+import { ConfigProvider, Form, Input } from "antd";
+import React, { useState } from "react";
+import { CustomButton } from "../custom-button/CustomButton";
+import { useAppSelector } from "@/shared/lib/store/store.hooks";
+import { RootState } from "@/shared/lib/store/store";
+import {
+  setLeftEditorMenuState,
+  setSelectedTemplate,
+  setTemplatesState,
+} from "@/shared/lib/store/features";
+import { useDispatch } from "react-redux";
+import { EDITOR, Template } from "@/shared/types";
+import { v4 as uuidv4 } from "uuid";
+
+interface CreateTemplateFormProps {
+  closeModal?: () => void;
+}
+
+export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
+  closeModal,
+}) => {
+  const dispatch = useDispatch();
+  const [form] = Form.useForm();
+  const defaultState = useAppSelector((store: RootState) => store.default);
+  const editorState = useAppSelector((store: RootState) => store.editor);
+  const templatesState = useAppSelector((store: RootState) => store.templates);
+  const [saveOptions, setSaveOptions] = useState<boolean>(false);
+  const [templateToOpen, setTemplateToOpen] = useState<Template | null>(null);
+
+  const { selectedTemplate } = editorState;
+  const isDarkTheme = defaultState.theme === "dark";
+
+  const openTemplate = (template: Template | null) => {
+    if (closeModal) {
+      closeModal();
+    }
+    if (template) {
+      dispatch(
+        setTemplatesState({
+          templates: [template, ...(templatesState.templates as Template[])],
+        })
+      );
+      dispatch(setSelectedTemplate(template));
+      dispatch(setLeftEditorMenuState(EDITOR.EDITOR_MENU));
+    }
+  };
+
+  const onFinish = (values: any) => {
+    const template: Template = {
+      id: uuidv4(),
+      name: values.name,
+    };
+    if (selectedTemplate) {
+      setTemplateToOpen(template);
+      setSaveOptions(true);
+    } else {
+      openTemplate(template);
+    }
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
+  return (
+    <ConfigProvider
+      theme={{
+        components: {
+          Input: {
+            colorBgContainer: isDarkTheme ? "#1c1c1c" : "#f4f4f4",
+            colorTextPlaceholder: isDarkTheme ? "#f4f4f4" : "#1c1c1c",
+            colorText: isDarkTheme ? "#fff" : "#1c1c1cf",
+          },
+        },
+      }}
+    >
+      {saveOptions ? (
+        <div>
+          <p className={`${isDarkTheme && "text-white"}`}>
+            The <b>{selectedTemplate?.name}</b> template is currently opened. Do
+            you want to save your changes before closing it?
+          </p>
+          <div className="flex gap-2 mt-4">
+            <CustomButton
+              theme="white"
+              text="Save and continue"
+              fullWidth
+              onClick={() => openTemplate(templateToOpen)}
+            />
+            <CustomButton
+              theme="black"
+              text="Continue without saving"
+              fullWidth
+              onClick={() => openTemplate(templateToOpen)}
+            />
+          </div>
+        </div>
+      ) : (
+        <Form
+          form={form}
+          name="basic"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+          className="create-template-form w-full"
+        >
+          <Form.Item
+            name="name"
+            rules={[{ required: true, message: "Please input your username!" }]}
+            wrapperCol={{ span: 24 }}
+          >
+            <Input placeholder="Enter template name" />
+          </Form.Item>
+
+          <div className="w-full flex justify-end">
+            <CustomButton theme="black" text="Create template" />
+          </div>
+        </Form>
+      )}
+    </ConfigProvider>
+  );
+};
