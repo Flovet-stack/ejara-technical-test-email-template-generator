@@ -7,7 +7,7 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  //   transition-duration: $transition-duration;
+  transition-duration: $transition-duration;
   list-style-type: none;
   border: none;
   outline: none;
@@ -61,4 +61,29 @@ body {
   }
 
   /* end scrollbar ******************************* */
+  &.dark {
+    .ant-modal {
+      .ant-modal-header {
+        background-color: darken($black, 5%) !important;
+        .ant-modal-title {
+          color: $white !important;
+        }
+      }
+      .ant-modal-content {
+        background-color: darken($black, 5%) !important;
+      }
+      .ant-modal-body {
+        p {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $spacing;
 }

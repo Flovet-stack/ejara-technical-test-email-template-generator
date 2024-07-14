@@ -1,6 +1,10 @@
-export const AddIcon = () => (
+interface AddIconProps {
+  width?: number;
+}
+
+export const AddIcon: React.FC<AddIconProps> = ({ width }) => (
   <svg
-    width="11"
+    width={width ?? "11"}
     height="12"
     viewBox="0 0 11 12"
     fill="none"

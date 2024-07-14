@@ -7,6 +7,7 @@ export const EditorMenu = () => {
       <SidebarSection
         title="Variables"
         collapsible="disabled"
+        extraEvent={() => {}}
         child={<>test</>}
       />
       <SidebarSection title="Components" child={<>test</>} />

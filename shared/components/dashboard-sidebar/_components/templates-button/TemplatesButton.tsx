@@ -1,7 +1,22 @@
 import { CustomButton } from "@/shared/components/custom-button/CustomButton";
-import { ElementPlusIcon } from "@/shared/icons";
+import { FolderIcon } from "@/shared/icons";
+import { setLeftEditorMenuState } from "@/shared/lib/store/features";
+import { useAppDispatch } from "@/shared/lib/store/store.hooks";
+import { EDITOR } from "@/shared/types";
 import React from "react";
 
 export const TemplatesButton = () => {
-  return <CustomButton theme="sidebar-button" icon={<ElementPlusIcon />} />;
+  const dispatch = useAppDispatch();
+
+  const handleShowTemplates = () => {
+    dispatch(setLeftEditorMenuState(EDITOR.TEMPLATES_MENU));
+  };
+
+  return (
+    <CustomButton
+      theme="sidebar-button"
+      icon={<FolderIcon />}
+      onClick={handleShowTemplates}
+    />
+  );
 };

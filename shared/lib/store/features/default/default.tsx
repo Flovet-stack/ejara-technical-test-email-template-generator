@@ -3,13 +3,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface DefaultsState {
   theme: AppTheme;
-  leftEditorMenu: EDITOR;
-  rightEditorMenu: EDITOR;
+  leftEditorMenu: EDITOR | null;
+  rightEditorMenu: EDITOR | null;
 }
 
 const initialState: DefaultsState = {
   theme: "light",
-  leftEditorMenu: EDITOR.EDITOR_MENU,
+  leftEditorMenu: EDITOR.TEMPLATES_MENU,
   rightEditorMenu: EDITOR.EDITOR_DETAILS_MENU,
 };
 

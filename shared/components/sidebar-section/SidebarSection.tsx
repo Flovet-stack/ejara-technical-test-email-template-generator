@@ -12,12 +12,14 @@ interface SidebarSectionProps {
   title?: string;
   child: ReactNode;
   collapsible?: CollapsibleType;
+  extraEvent?: () => void;
 }
 
 export const SidebarSection: React.FC<SidebarSectionProps> = ({
   title,
   child,
   collapsible,
+  extraEvent,
 }) => {
   const defaultState = useAppSelector((store: RootState) => store.default);
   const { token } = theme.useToken();
@@ -40,6 +42,7 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
       theme="sidebar-section-button"
       icon={<AddIcon />}
       onClick={(event) => {
+        extraEvent && extraEvent();
         // If you don't want click extra trigger collapse, you can prevent this:
         event.stopPropagation();
       }}
@@ -54,7 +57,7 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
       label: <div className="sidebar-section-title">{title}</div>,
       children: child,
       style: panelStyle,
-      extra: genExtra(),
+      extra: extraEvent && genExtra(),
     },
   ];
 
@@ -71,7 +74,12 @@ export const SidebarSection: React.FC<SidebarSectionProps> = ({
             if (collapsible) {
               return undefined;
             }
-            return <ChevronRightIcon rotate={isActive ? 90 : 0} width={14} />;
+            return (
+              <CustomButton
+                theme="sidebar-section-button"
+                icon={<ChevronRightIcon rotate={isActive ? 90 : 0} />}
+              />
+            );
           }}
           style={{ background: token.colorBgContainer }}
           items={getItems(panelStyle)}

@@ -7,15 +7,19 @@ import { RootState } from "@/shared/lib/store/store";
 
 export const DashboardHeader = () => {
   const defaultState = useAppSelector((store: RootState) => store.default);
+  const editorState = useAppSelector((store: RootState) => store.editor);
   const { theme } = defaultState;
+  const { selectedTemplate } = editorState;
 
   return (
     <div className={`dashboard-header ${theme}`}>
       <div className="corner">
         <div className="page-details">
-          <div className="bg-red-500">
-            <h2>Welcome</h2>
-            <h1>List of Templates</h1>
+          <div>
+            <h2>{selectedTemplate ? "Template name" : "Welcome"}</h2>
+            <h1>
+              {selectedTemplate ? selectedTemplate.name : "List of Templates"}
+            </h1>
           </div>
         </div>
       </div>

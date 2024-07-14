@@ -108,7 +108,8 @@
     .icon {
       opacity: 1;
       svg {
-        transform: scale(0.6);
+        width: 18px;
+        height: 18px;
         path {
           stroke: $black;
         }
@@ -152,7 +153,7 @@
     &.dark {
       background-color: $white;
       &:hover:not(:disabled) {
-        background-color: $dark-theme-bg;
+        background-color: #f0f0f0 !important;
       }
       span {
         color: $black;
@@ -162,6 +163,41 @@
         svg {
           path {
             stroke: $black;
+          }
+        }
+      }
+    }
+  }
+
+  /* ------------------------------ white theme ----------------------------- */
+  &.white {
+    background-color: $white;
+    &:hover:not(:disabled) {
+      background-color: #f0f0f0;
+    }
+    span {
+      color: $black;
+    }
+    .icon {
+      color: $black;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &.dark {
+      background-color: $black;
+      &:hover:not(:disabled) {
+        background-color: #000 !important;
+      }
+      span {
+        color: $white;
+      }
+      .icon {
+        color: $white;
+        svg {
+          path {
+            stroke: $white;
           }
         }
       }

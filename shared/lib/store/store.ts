@@ -1,10 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { defaultReducer, templatesReducer } from "./features";
+import { defaultReducer, editorReducer, templatesReducer } from "./features";
 
 export const store = configureStore({
   reducer: {
     templates: templatesReducer,
     default: defaultReducer,
+    editor: editorReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
@@ -15,6 +16,7 @@ export const makeStore = () =>
     reducer: {
       templates: templatesReducer,
       default: defaultReducer,
+      editor: editorReducer,
     },
   });
 

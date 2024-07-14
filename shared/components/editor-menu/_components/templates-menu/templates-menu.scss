@@ -1,0 +1,48 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.templates-menu {
+  display: flex;
+  flex-direction: column;
+  gap: calc($spacing / 2);
+  .template-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border-radius: $border-radius;
+    height: 35px;
+    padding: $spacing calc($spacing / 2) $spacing $spacing;
+    transition-duration: $transition-duration;
+    cursor: pointer;
+    p {
+      color: $black;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+      font-size: 0.85em;
+    }
+    &:hover {
+      background-color: $light-theme-bg;
+      transition-duration: $transition-duration;
+    }
+  }
+  &.dark {
+    .template-card {
+      p {
+        color: $white;
+      }
+      svg {
+        path {
+          stroke: $white !important;
+        }
+      }
+      &:hover {
+        background-color: $dark-theme-bg;
+      }
+    }
+  }
+}

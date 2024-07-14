@@ -8,12 +8,12 @@ import {
 
 export const sidebarTopLinks: SidebarLink[] = [
   {
-    name: "templates",
-    component: TemplatesButton,
-  },
-  {
     name: "editor-actions",
     component: EditorActionsButton,
+  },
+  {
+    name: "templates",
+    component: TemplatesButton,
   },
 ];
 

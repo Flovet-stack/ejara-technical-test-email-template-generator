@@ -12,15 +12,16 @@ import {
   TextDetailsMenu,
   EditorMenu as EditorMenuDisplay,
 } from "./_components";
-import { CollapsibleType } from "antd/es/collapse/CollapsePanel";
-
 interface EditorMenuProps {
-  menu: EDITOR;
+  menu: EDITOR | null;
   position: "left" | "right";
 }
 
 export const EditorMenu: React.FC<EditorMenuProps> = ({ menu, position }) => {
   let SidebarContent;
+
+  const EmptyMenu = () => <></>;
+
   switch (menu) {
     case EDITOR.TEMPLATES_MENU:
       SidebarContent = TemplatesMenu;
@@ -53,7 +54,7 @@ export const EditorMenu: React.FC<EditorMenuProps> = ({ menu, position }) => {
       SidebarContent = ContainerDetailsMenu;
       break;
     default:
-      SidebarContent = EditorDetailsMenu;
+      SidebarContent = EmptyMenu;
       break;
   }
 

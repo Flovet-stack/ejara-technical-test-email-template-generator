@@ -1,4 +1,7 @@
-export type Template = any;
+export interface Template {
+  id: string;
+  name: string;
+}
 
 export type SidebarLink = {
   name: string;
@@ -18,4 +21,41 @@ export enum EDITOR {
   DIVIDER_DETAILS_MENU = "divider-details",
   SPACER_DETAILS_MENU = "spacer-details",
   CONTAINER_DETAILS_MENU = "container-details",
+}
+
+export enum COMPONENT {
+  TEXT = "text",
+  HEADING = "heading",
+  BUTTON = "button",
+  IMAGE = "image",
+  DIVIDER = "divider",
+  SPACER = "spacer",
+  CONTAINER = "container",
+}
+
+export enum COMPONENT_ATTRIBUTE {
+  TEXT_CONTENT = "text-content",
+  HEADING = "heading",
+  TEXT_COLOR = "text-color",
+  BACKGROUND_COLOR = "background-color",
+  FONT_FAMILY = "font-family",
+  FONT_WEIGHT = "font-weight",
+  FONT_SIZE = "font-size",
+  ALIGNMENT = "alignment",
+  HEADING_LEVEL = "heading-level",
+  PADDING = "padding",
+  URL = "url",
+  WIDTH = "width",
+  HEIGHT = "height",
+  BUTTON_WIDTH = "button-width",
+  BUTTON_SIZE = "button-size",
+  BUTTON_STYLE = "button-style",
+  BUTTON_COLOR = "button-color",
+  ALT_TEXT = "alt-text",
+  CLICK_THROUGH_URL = "click-through-url",
+  DIVIDER_COLOR = "divider",
+  BORDER_WIDTH = "border-width",
+  BORDER_COLOR = "border-color",
+  BORDER_RADIUS = "border-radius",
+  LAYOUT_COLUMNS = "layout-columns",
 }

@@ -26,10 +26,10 @@ export const ChevronRightIcon: React.FC<ChevronRightIconProps> = ({
     <path
       d="M6.6825 15.4401L11.5725 10.5501C12.15 9.97256 12.15 9.02756 11.5725 8.45006L6.6825 3.56006"
       stroke="#1C1C1C"
-      stroke-width="1.5"
-      stroke-miterlimit="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

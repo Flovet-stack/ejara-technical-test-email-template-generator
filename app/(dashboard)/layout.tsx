@@ -15,6 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const defaultState = useAppSelector((store: RootState) => store.default);
+
   const { theme, leftEditorMenu, rightEditorMenu } = defaultState;
 
   return (

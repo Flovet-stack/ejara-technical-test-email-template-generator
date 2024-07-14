@@ -14,6 +14,29 @@
       padding: 0 !important;
     }
   }
+  .ant-collapse.ant-collapse-icon-position-end
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-expand-icon {
+    padding-inline-start: 0.3rem !important;
+    opacity: 1 !important;
+    svg {
+      stroke: $black;
+      svg {
+        transform: scale(0.3);
+      }
+    }
+  }
+  .ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-expand-icon {
+    height: auto;
+  }
+  .ant-collapse .ant-collapse-item:last-child > .ant-collapse-content {
+    margin-top: $spacing;
+    border-radius: 0;
+  }
   .sidebar-section-title {
     font-size: 1em;
     font-weight: 600;
