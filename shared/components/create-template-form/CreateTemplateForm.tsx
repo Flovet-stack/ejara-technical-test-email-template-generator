@@ -49,7 +49,6 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
   };
 
   const onFinish = (values: any) => {
-    console.log("🚀 ~ onFinish ~ values:", values);
     setError("");
     if (!values.name) {
       setError("Please enter template name");
@@ -118,6 +117,7 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
             <InputField
               style={{ height: "40px", fontSize: "1em" }}
               name="name"
+              label="name"
               placeholder="Enter template name"
               errorMessage={error}
               onChange={(e) => {

@@ -95,8 +95,8 @@ form {
     text-align: left;
     label {
       display: block;
-      font-size: 0.875em;
-      margin-bottom: 0.1rem;
+      font-size: 0.75em;
+      margin-bottom: 0.15rem;
       color: $black;
       text-transform: lowercase;
       &::first-letter {
@@ -109,26 +109,28 @@ form {
       height: 30px;
       border: 1px solid $light-theme-border;
       border-radius: $border-radius;
-      padding: 0 0.7rem;
-      font-size: 0.85em;
+      padding: 0 0.35rem;
+      font-size: 0.8em;
       outline: none !important;
-      // background-color: $input-bg;
+      background-color: $light-theme-bg;
+      color: $black;
     }
     textarea {
       width: 100%;
       height: 300px;
       border: 1px solid $light-theme-border;
       border-radius: $border-radius;
-      padding: 0.7rem;
-      font-size: 1em;
+      padding: 0.35rem;
+      font-size: 0.8em;
       background-color: $light-theme-bg;
-      transition-duration: 0.3s;
+      color: $black;
+      transition-duration: $transition-duration;
     }
     input,
     select {
       &:focus {
         border-color: $black;
-        transition-duration: 0.3s;
+        transition-duration: $transition-duration;
       }
     }
     .error {
@@ -146,44 +148,12 @@ form {
           color: $red !important;
         }
       }
-      .password-sub {
-        border-color: $red !important;
-      }
       .ant-select-selector {
         border: 1px solid $red;
         // background-color: $light-red !important;
       }
       .ant-select:hover .ant-select-selector {
         border-color: $red !important;
-      }
-    }
-    .password-sub {
-      display: flex;
-      // background-color: $input-bg;
-      align-items: center;
-      border: 1px solid $light-theme-border;
-      border-radius: $border-radius;
-      input {
-        border: none;
-      }
-      .toggle {
-        width: 45px;
-        height: 45px;
-        // background-color: $input-bg;
-        transform: scale(0.8);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        color: $black;
-        transition-duration: 0.3s;
-        &:hover {
-          background-color: $black;
-          color: $white;
-          transition-duration: 0.3s;
-        }
       }
     }
     > a {
@@ -194,6 +164,53 @@ form {
       font-size: 1em;
       &:hover {
         color: $black;
+      }
+    }
+    &.dark {
+      label {
+        color: $white !important;
+      }
+      input,
+      select {
+        border: 1px solid $dark-theme-border !important;
+        background-color: $dark-theme-bg !important;
+        color: $white !important;
+      }
+      textarea {
+        border: 1px solid $dark-theme-border;
+        background-color: $dark-theme-bg;
+        background-color: $dark-theme-bg !important;
+        color: $white !important;
+      }
+      input,
+      select {
+        &:focus {
+          border-color: $white;
+        }
+      }
+      > a {
+        color: $dark-theme-light-text;
+      }
+      // TODO: move items below out of the field selector
+      input {
+        &:checked + label .provider-select {
+          border-color: $white !important;
+          p {
+            color: $white !important;
+          }
+        }
+      }
+      .checkbox {
+        > input {
+          + .box {
+            border: 2px solid $white;
+          }
+          &:checked + .box {
+            &::after {
+              background-color: $white;
+            }
+          }
+        }
       }
     }
   }
@@ -228,14 +245,14 @@ form {
           width: 100%;
           height: 100%;
           background-color: transparent;
-          transition-duration: 0.3s;
+          transition-duration: $transition-duration;
         }
       }
       &:checked + .box {
         &::after {
           background-color: $black;
           transform: scale(0.8);
-          transition-duration: 0.3s;
+          transition-duration: $transition-duration;
         }
       }
     }
@@ -248,4 +265,7 @@ form {
   .ant-form-item .ant-form-item-explain {
     font-size: 0.85em !important;
   }
+}
+.ant-form-item {
+  margin-bottom: 2px !important;
 }

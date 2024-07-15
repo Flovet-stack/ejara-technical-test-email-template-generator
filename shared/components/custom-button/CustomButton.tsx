@@ -19,7 +19,9 @@ export interface CustomButtonProps
     | "dark"
     | "black"
     | "sidebar-button"
-    | "sidebar-section-button";
+    | "sidebar-section-button"
+    | "variable-card-button-red"
+    | "variable-card-button";
   width?: number;
   height?: number;
   fullWidth?: true;
@@ -53,9 +55,9 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   return (
     <button
       {...props}
-      className={`custom-button ${
-        smallPadding ? "icon-btn" : ""
-      } ${appTheme} ${theme} ${fullWidth && "w-full"}`}
+      className={`custom-button ${smallPadding ? "icon-btn" : ""} ${
+        appTheme === "dark" && "dark"
+      } ${theme} ${fullWidth && "w-full"}`}
       style={{ width, height }}
     >
       {loading && loaderPosition !== "right" && <LoadingSpinner />}

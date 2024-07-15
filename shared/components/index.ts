@@ -6,3 +6,6 @@ export * from "./editor-menu/EditorMenu";
 export * from "./modal-wrapper/ModalWrapper";
 export * from "./create-template-form/CreateTemplateForm";
 export * from "./input-field/InputField";
+export * from "./variable-card/VariableCard";
+export * from "./variables-list/VariablesList";
+export * from "./create-variable-form/CreateVariableForm";

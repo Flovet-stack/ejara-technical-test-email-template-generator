@@ -45,26 +45,28 @@ export const EditorActionsButton = () => {
       </div>
     );
   };
-
-  return (
-    <div className={`templates-menu ${defaultState.theme}`}>
-      <CustomButton
-        theme="sidebar-button"
-        icon={<ElementPlusIcon />}
-        onClick={handleShowEditorActions}
-      />
-      <ModalWrapper>
-        <Modal
-          title="Select a template"
-          open={isModalOpen}
-          onCancel={handleCloseModal}
-          footer={[<ModalActions key={1} />]}
-        >
-          <p className={`${isDarkTheme && "text-white"}`}>
-            There is no opened template, please open one first
-          </p>
-        </Modal>
-      </ModalWrapper>
-    </div>
-  );
+  if (selectedTemplate) {
+    return (
+      <div className={`templates-menu ${defaultState.theme}`}>
+        <CustomButton
+          theme="sidebar-button"
+          icon={<ElementPlusIcon />}
+          onClick={handleShowEditorActions}
+        />
+        <ModalWrapper>
+          <Modal
+            title="Select a template"
+            open={isModalOpen}
+            onCancel={handleCloseModal}
+            footer={[<ModalActions key={1} />]}
+          >
+            <p className={`${isDarkTheme && "text-white"}`}>
+              There is no opened template, please open one first
+            </p>
+          </Modal>
+        </ModalWrapper>
+      </div>
+    );
+  }
+  return null;
 };

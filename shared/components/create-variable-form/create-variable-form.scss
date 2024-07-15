@@ -1,0 +1,8 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.create-variable-form {
+  padding: calc($spacing / 2);
+  border-radius: $border-radius;
+  border: 1px solid $light-theme-border;
+}

@@ -2,4 +2,74 @@
 @import "@/shared/styles/utils";
 
 .variable-card {
+  padding: $spacing;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing;
+  background-color: transparent;
+  border-radius: $border-radius;
+  height: 45px;
+  padding: $spacing calc($spacing / 2) $spacing $spacing;
+  transition-duration: $transition-duration;
+  cursor: pointer;
+  .info {
+    width: calc(100% - calc(50px + calc($spacing * 2)));
+    .name {
+      line-height: 110%;
+      font-size: 0.75em;
+      color: $light-theme-light-text;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+      transition-duration: $transition-duration;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .value {
+      flex-grow: 1;
+      line-height: 110%;
+      font-size: 0.85em;
+      color: $black;
+      font-weight: 400;
+      transition-duration: $transition-duration;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1; /* number of lines to show */
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+  .buttons {
+    opacity: 0;
+  }
+  &:hover {
+    background-color: $light-theme-bg;
+    transition-duration: $transition-duration;
+    .buttons {
+      opacity: 1;
+    }
+  }
+  &.dark {
+    .info {
+      .name {
+        color: $dark-theme-light-text;
+      }
+      .value {
+        color: $white;
+      }
+    }
+    .buttons {
+      opacity: 0;
+    }
+    &:hover {
+      .buttons {
+        opacity: 1;
+      }
+      background-color: $dark-theme-bg;
+    }
+  }
 }

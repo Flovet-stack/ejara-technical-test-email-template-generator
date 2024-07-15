@@ -44,7 +44,6 @@ export const DashboardHeader = () => {
             <CustomButton
               theme="black"
               text="Create template"
-              icon={<AddIcon />}
               fullWidth
               onClick={showModal}
             />

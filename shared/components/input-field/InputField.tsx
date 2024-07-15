@@ -1,6 +1,8 @@
 import React from "react";
 import "./input-field.scss";
 import { Checkbox, Form } from "antd";
+import { useAppSelector } from "@/shared/lib/store/store.hooks";
+import { RootState } from "@/shared/lib/store/store";
 
 type InputFieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
   name: string;
@@ -27,6 +29,9 @@ export const InputField: React.FC<InputFieldProps> = ({
   errorMessage,
   ...props
 }) => {
+  const defaultState = useAppSelector((store: RootState) => store.default);
+  console.log("🚀 ~ value in field:", props.value);
+
   let InputComponent: any = "input";
   if (textarea) {
     InputComponent = "textarea";
@@ -37,7 +42,9 @@ export const InputField: React.FC<InputFieldProps> = ({
   }
 
   return (
-    <div className={`field ${errorMessage ? "error" : ""}`}>
+    <div
+      className={`field ${defaultState.theme} ${errorMessage ? "error" : ""}`}
+    >
       {label && <label htmlFor={name}>{label}</label>}
       <Form.Item
         help={errorMessage}
@@ -49,7 +56,8 @@ export const InputField: React.FC<InputFieldProps> = ({
             id={name}
             name={name}
             placeholder={placeholder}
-            type={InputComponent === "input" ? (type ? "number" : "") : ""}
+            value={props.value}
+            type={type}
           />
         )}
         {select && (
@@ -58,6 +66,7 @@ export const InputField: React.FC<InputFieldProps> = ({
             id={name}
             name={name}
             placeholder={placeholder}
+            value={props.value}
             type={InputComponent === "input" ? (type ? "number" : "") : ""}
           >
             <option value=""></option>

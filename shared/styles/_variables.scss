@@ -1,6 +1,7 @@
 $black: #1c1c1c;
 $white: #fff;
 $red: #ff4d4f;
+$light-red: #fff4f3;
 $light-theme-border: rgba(28, 28, 28, 0.1);
 $light-theme-bg: #f4f4f4;
 $light-theme-light-text: rgba(28, 28, 28, 0.6);
@@ -9,11 +10,11 @@ $dark-theme-bg: #333333;
 $dark-theme-light-text: rgba(255, 255, 255, 0.6);
 
 $transition-duration: 0.3s;
-$border-radius: 5px;
+$border-radius: 3px;
 $spacing: 0.5rem;
 $sidebar-button-size: 40px;
 $button-height: 30px;
-$button-height-large: 40px;
+$button-height-large: 30px;
 $sidebar-width: calc($sidebar-button-size + calc($spacing * 2));
 $header-height: calc($button-height + calc($spacing * 2));
 $header-height-large: calc($button-height-large + calc($spacing * 2));
