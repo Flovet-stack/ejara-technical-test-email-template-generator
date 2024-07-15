@@ -13,10 +13,9 @@ interface DraggableProps {
 }
 
 export const Draggable: React.FC<DraggableProps> = ({ id, children }) => {
-  const { attributes, listeners, setNodeRef, transform, isDragging } =
-    useDraggable({
-      id,
-    });
+  const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    id,
+  });
   const style = {
     // Outputs `translate3d(x, y, 0)`
     transform: CSS.Translate.toString(transform),
@@ -26,9 +25,9 @@ export const Draggable: React.FC<DraggableProps> = ({ id, children }) => {
   //   setActiveId(null);
   // };
 
-  if (isDragging) {
-    return children;
-  }
+  // if (isDragging) {
+  //   return children;
+  // }
 
   return (
     <div

@@ -20,6 +20,11 @@ export type EditorComponent = {
   icon: React.JSX.Element;
 };
 
+export type EditorNodeType = {
+  id: string;
+  name: string;
+};
+
 export type AppTheme = "light" | "dark";
 
 export enum EDITOR {

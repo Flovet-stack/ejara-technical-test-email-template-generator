@@ -11,7 +11,7 @@ export const Droppable: React.FC<DroppableProps> = ({ id, children }) => {
     id,
   });
   const style = {
-    opacity: isOver ? 1 : 0.5,
+    // opacity: isOver ? 1 : 0.5,
   };
 
   return (

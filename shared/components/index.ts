@@ -12,3 +12,4 @@ export * from "./create-variable-form/CreateVariableForm";
 export * from "./component-card/ComponentCard";
 export * from "./draggable/Draggable";
 export * from "./droppable/Droppable";
+export * from "./editor-node/EditorNode";
