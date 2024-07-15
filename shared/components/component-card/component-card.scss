@@ -11,6 +11,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  position: relative;
+  z-index: 99;
   cursor: pointer;
   &:active {
     cursor: grab;

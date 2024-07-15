@@ -1,3 +1,5 @@
+"use client";
+
 import { ConfigProvider, Form, Input } from "antd";
 import React, { useState } from "react";
 import { CustomButton } from "../custom-button/CustomButton";

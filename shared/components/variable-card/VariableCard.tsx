@@ -1,3 +1,5 @@
+"use client";
+
 import { EditorVariable } from "@/shared/types";
 import React, { useState } from "react";
 import "./variable-card.scss";

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import "./dashboard-header.scss";
 import { CustomButton } from "../custom-button/CustomButton";

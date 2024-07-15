@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import "./templates-menu.scss";
 import { TemplateMenuCard } from "./TemplateMenuCard";
