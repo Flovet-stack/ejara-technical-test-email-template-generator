@@ -224,7 +224,7 @@
     &.dark {
       background-color: $dark-theme-bg;
       &:hover:not(:disabled) {
-        background-color: darken($dark-theme-bg, 10%) !important;
+        background-color: lighten($dark-theme-bg, 10%) !important;
       }
       span {
         color: $white;

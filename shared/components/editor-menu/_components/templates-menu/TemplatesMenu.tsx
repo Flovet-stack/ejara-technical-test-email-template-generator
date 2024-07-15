@@ -61,7 +61,7 @@ export const TemplatesMenu = () => {
       <div className="modal-actions w-full">
         <CustomButton
           key={1}
-          theme="white"
+          theme="light"
           text="Cancel"
           onClick={handleCloseModal}
         />

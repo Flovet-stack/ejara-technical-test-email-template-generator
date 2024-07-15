@@ -90,7 +90,7 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
           </p>
           <div className="flex gap-2 mt-4">
             <CustomButton
-              theme="white"
+              theme="light"
               text="Save and continue"
               fullWidth
               onClick={() => openTemplate(templateToOpen)}

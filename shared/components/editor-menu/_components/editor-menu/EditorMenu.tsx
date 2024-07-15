@@ -4,6 +4,7 @@ import { setShowCreateVariableForm } from "@/shared/lib/store/features";
 import { RootState } from "@/shared/lib/store/store";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/store/store.hooks";
 import React from "react";
+import { ComponentList } from "./ComponentList";
 
 export const EditorMenu = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +22,7 @@ export const EditorMenu = () => {
         extraEvent={handleOpenCreateForm}
         child={<VariablesList />}
       />
-      <SidebarSection title="Components" child={<>test</>} />
+      <SidebarSection title="Components" child={<ComponentList />} />
     </div>
   );
 };

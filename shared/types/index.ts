@@ -11,7 +11,13 @@ export interface EditorVariable {
 
 export type SidebarLink = {
   name: string;
-  component: () => React.JSX.Element;
+  component: () => React.JSX.Element | null;
+};
+
+export type EditorComponent = {
+  id: string;
+  name: string;
+  icon: React.JSX.Element;
 };
 
 export type AppTheme = "light" | "dark";

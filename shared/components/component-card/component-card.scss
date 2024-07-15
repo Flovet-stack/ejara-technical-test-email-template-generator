@@ -1,0 +1,49 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.component-card {
+  width: 100%;
+  height: 100px;
+  background-color: $light-theme-bg;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  &:active {
+    cursor: grab;
+  }
+  .icon {
+    svg {
+      path {
+        stroke: $black;
+      }
+    }
+  }
+  p {
+    text-transform: capitalize;
+    font-size: 0.85em;
+    color: $black;
+  }
+  &:hover {
+    background-color: darken($light-theme-bg, 5%);
+  }
+  &.dark {
+    background-color: $dark-theme-bg;
+    .icon {
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
+    }
+    p {
+      color: $white;
+    }
+    &:hover {
+      background-color: lighten($dark-theme-bg, 5%);
+    }
+  }
+}
