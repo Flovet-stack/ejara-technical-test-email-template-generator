@@ -9,7 +9,7 @@ interface ImageNodeProps {
 export const ImageNode: React.FC<ImageNodeProps> = ({ data }) => {
   const {
     url,
-    clickThroughUrl,
+    // clickThroughUrl,
     width,
     height,
     backgroundColor,

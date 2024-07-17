@@ -22,19 +22,26 @@ export const TestTemplate = () => {
       ))}
     </Html>
   );
-  const resend = new Resend("re_123456789");
 
+  const resend = new Resend("re_Pyjc2XAw_K2W4JurkaMbxXhvUn4xzNPtu");
   const onFinish = async (values: any) => {
     setError("");
     if (!values.email) {
       setError("Please enter receiver's email");
-    } else {
-      await resend.emails.send({
+      return;
+    }
+
+    try {
+      const response = await resend.emails.send({
         from: values.email,
         to: "lovetofloveto3@gmail.com",
         subject: "Testing a template",
         react: <Template />,
       });
+      console.log("Email sent successfully:", response);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setError("Failed to send email. Please try again.");
     }
   };
 
@@ -57,7 +64,7 @@ export const TestTemplate = () => {
         <Form.Item name="email" wrapperCol={{ span: 24 }}>
           <InputField
             name="email"
-            label="email"
+            label="Email"
             placeholder="Enter receiver email"
             errorMessage={error}
             onChange={(e) => {
