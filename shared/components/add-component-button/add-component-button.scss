@@ -1,0 +1,17 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.add-component-button {
+  background-color: $black;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius;
+  svg {
+    path {
+      stroke: $white;
+    }
+  }
+}

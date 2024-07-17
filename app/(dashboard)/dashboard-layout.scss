@@ -82,6 +82,18 @@
         height: 100%;
         background-color: $light-theme-bg;
         transition-duration: $transition-duration;
+        .no-template {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: $spacing;
+          color: $light-theme-light-text;
+          svg {
+            path {
+              stroke: $light-theme-light-text;
+            }
+          }
+        }
       }
     }
     &.dark {
@@ -99,6 +111,14 @@
         .editor {
           background-color: $dark-theme-bg;
           transition-duration: $transition-duration;
+          .no-template {
+            color: $dark-theme-light-text;
+            svg {
+              path {
+                stroke: $dark-theme-light-text;
+              }
+            }
+          }
         }
       }
     }

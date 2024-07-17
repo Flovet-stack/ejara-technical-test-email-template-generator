@@ -7,42 +7,42 @@ import {
   SpacerIcon,
 } from "@/shared/icons";
 import { TextIcon } from "@/shared/icons/text-icon";
-import { EditorComponent } from "@/shared/types";
+import { COMPONENT, EditorComponent } from "@/shared/types";
 
 export const editorComponents: EditorComponent[] = [
   {
     id: "1",
-    name: "text",
-    icon: <TextIcon />,
-  },
-  {
-    id: "2",
-    name: "heading",
+    name: COMPONENT.HEADING,
     icon: <SmallCapsIcon />,
   },
   {
+    id: "2",
+    name: COMPONENT.TEXT,
+    icon: <TextIcon />,
+  },
+  {
     id: "3",
-    name: "button",
+    name: COMPONENT.BUTTON,
     icon: <ScreenMirroringIcon />,
   },
   {
     id: "4",
-    name: "image",
+    name: COMPONENT.IMAGE,
     icon: <GalleryIcon />,
   },
   {
     id: "5",
-    name: "divider",
+    name: COMPONENT.DIVIDER,
     icon: <MinusIcon />,
   },
   {
     id: "6",
-    name: "spacer",
+    name: COMPONENT.SPACER,
     icon: <SpacerIcon />,
   },
   {
     id: "7",
-    name: "container",
+    name: COMPONENT.CONTAINER,
     icon: <ContainerIcon />,
   },
 ];

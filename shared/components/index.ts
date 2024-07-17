@@ -13,3 +13,4 @@ export * from "./component-card/ComponentCard";
 export * from "./draggable/Draggable";
 export * from "./droppable/Droppable";
 export * from "./editor-node/EditorNode";
+export * from "./add-component-button/AddComponentButton";

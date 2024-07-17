@@ -117,7 +117,7 @@ export const CreateTemplateForm: React.FC<CreateTemplateFormProps> = ({
         >
           <Form.Item name="name" wrapperCol={{ span: 24 }}>
             <InputField
-              style={{ height: "40px", fontSize: "1em" }}
+              // style={{ height: "40px", fontSize: "1em" }}
               name="name"
               label="name"
               placeholder="Enter template name"

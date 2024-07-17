@@ -32,6 +32,28 @@
   &:hover {
     background-color: darken($light-theme-bg, 5%);
   }
+  &.small {
+    width: 100%;
+    height: 50px;
+    gap: 0.1rem;
+    &:active {
+      cursor: default;
+    }
+    .icon {
+      svg {
+        width: 16px;
+        width: 16px;
+        path {
+          stroke: $black;
+        }
+      }
+    }
+    p {
+      text-transform: capitalize;
+      font-size: 0.75em;
+      color: $black;
+    }
+  }
   &.dark {
     background-color: $dark-theme-bg;
     .icon {

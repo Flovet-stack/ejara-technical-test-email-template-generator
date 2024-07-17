@@ -1,4 +1,4 @@
-import { Droppable, EditorNode } from "@/shared/components";
+import { AddComponentButton, Droppable, EditorNode } from "@/shared/components";
 import { RootState } from "@/shared/lib/store/store";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/store/store.hooks";
 import {
@@ -19,7 +19,7 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import "./sortable-editor.scss";
-import { setNodes } from "@/shared/lib/store/features";
+import { setEditorNodes } from "@/shared/lib/store/features";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
 export const SortableEditor = () => {
@@ -38,7 +38,7 @@ export const SortableEditor = () => {
     const originalPosition = getNodePosition(active.id);
     const newPosition = getNodePosition(over?.id as UniqueIdentifier);
     const updatedNodes = arrayMove(nodes, originalPosition, newPosition);
-    dispatch(setNodes(updatedNodes));
+    dispatch(setEditorNodes(updatedNodes));
   };
 
   const sensors = useSensors(
@@ -47,6 +47,20 @@ export const SortableEditor = () => {
       coordinateGetter: sortableKeyboardCoordinates,
     })
   );
+
+  // return (
+  //   <div className="sortable-editor">
+  //     <div className="column">
+  //       {nodes.length > 0 ? (
+  //         nodes.map((node) => <EditorNode key={node.id} node={node} />)
+  //       ) : (
+  //         <div className="starting-node">
+  //           <AddComponentButton />
+  //         </div>
+  //       )}
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <div className="sortable-editor">
@@ -58,9 +72,13 @@ export const SortableEditor = () => {
       >
         <div className="column">
           <SortableContext items={nodes} strategy={verticalListSortingStrategy}>
-            {nodes.map((node) => (
-              <EditorNode key={node.id} node={node} />
-            ))}
+            {nodes.length > 0 ? (
+              nodes.map((node) => <EditorNode key={node.id} node={node} />)
+            ) : (
+              <div className="starting-node">
+                <AddComponentButton />
+              </div>
+            )}
           </SortableContext>
         </div>
       </DndContext>
