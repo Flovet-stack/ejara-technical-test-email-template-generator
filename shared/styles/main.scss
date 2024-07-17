@@ -333,3 +333,24 @@ form {
 .ant-form-item {
   margin-bottom: 2px !important;
 }
+
+.ant-segmented-item {
+  .ant-segmented-item-label {
+    display: flex;
+    align-items: center;
+    svg {
+      path {
+        stroke: $black;
+      }
+    }
+  }
+  &.ant-segmented-item-selected {
+    .ant-segmented-item-label {
+      svg {
+        path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+}

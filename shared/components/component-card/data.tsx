@@ -13,7 +13,7 @@ const initialTextData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.FONT_SIZE]: 14,
   [COMPONENT_ATTRIBUTE.FONT_WEIGHT]: "regular",
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "left",
-  [COMPONENT_ATTRIBUTE.PADDING]: "0.3rem 1rem",
+  [COMPONENT_ATTRIBUTE.PADDING]: "7px 14px 7px 14px",
 };
 
 // Initial data for Heading component
@@ -26,7 +26,7 @@ const initialHeadingData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.FONT_SIZE]: 22,
   [COMPONENT_ATTRIBUTE.FONT_WEIGHT]: "bold",
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "left",
-  [COMPONENT_ATTRIBUTE.PADDING]: "1rem",
+  [COMPONENT_ATTRIBUTE.PADDING]: "14px 14px 14px 14px",
 };
 
 // Initial data for Button component
@@ -43,7 +43,7 @@ const initialButtonData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.FONT_SIZE]: 14,
   [COMPONENT_ATTRIBUTE.FONT_WEIGHT]: "bold",
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "center",
-  [COMPONENT_ATTRIBUTE.PADDING]: "0.5rem 1rem",
+  [COMPONENT_ATTRIBUTE.PADDING]: "7px 14px 7px 14px",
   [COMPONENT_ATTRIBUTE.BORDER_WIDTH]: 1,
   [COMPONENT_ATTRIBUTE.BORDER_COLOR]: "#000000",
   [COMPONENT_ATTRIBUTE.BORDER_RADIUS]: "0.5rem",
@@ -58,7 +58,7 @@ const initialImageData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.HEIGHT]: "auto",
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "center",
   [COMPONENT_ATTRIBUTE.BACKGROUND_COLOR]: "#ffffff",
-  [COMPONENT_ATTRIBUTE.PADDING]: "1rem",
+  [COMPONENT_ATTRIBUTE.PADDING]: "14px 14px 14px 14px",
   [COMPONENT_ATTRIBUTE.BORDER_RADIUS]: "",
 };
 
@@ -67,7 +67,7 @@ const initialDividerData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.DIVIDER_COLOR]: "#000000",
   [COMPONENT_ATTRIBUTE.HEIGHT]: 1,
   [COMPONENT_ATTRIBUTE.BACKGROUND_COLOR]: "#ffffff",
-  [COMPONENT_ATTRIBUTE.PADDING]: "1rem 0",
+  [COMPONENT_ATTRIBUTE.PADDING]: "14px 0px 14px 0px",
 };
 
 // Initial data for Spacer component
@@ -82,7 +82,7 @@ const initialContainerData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.BORDER_WIDTH]: 1,
   [COMPONENT_ATTRIBUTE.BORDER_COLOR]: "#000000",
   [COMPONENT_ATTRIBUTE.BORDER_RADIUS]: "0.5rem",
-  [COMPONENT_ATTRIBUTE.PADDING]: "1rem",
+  [COMPONENT_ATTRIBUTE.PADDING]: "14px 14px 14px 14px",
   [COMPONENT_ATTRIBUTE.LAYOUT_COLUMNS]: 1,
 };
 export const loadInitialNodeData = (

@@ -25,6 +25,7 @@ export const HeadingNode: React.FC<HeadingNodeProps> = ({ data }) => {
     fontSize,
     fontWeight,
     margin: 0,
+    textAlign: alignment,
   };
 
   return (

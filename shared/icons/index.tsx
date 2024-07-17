@@ -14,3 +14,6 @@ export * from "./screenmirroring-icon";
 export * from "./smallcaps-icon";
 export * from "./spacer-icon";
 export * from "./text-icon";
+export * from "./textalign-center-icon";
+export * from "./textalign-left-icon";
+export * from "./textalign-right-icon";
