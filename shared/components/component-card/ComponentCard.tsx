@@ -13,7 +13,7 @@ import {
 
 interface ComponentCardProps {
   data: EditorComponent;
-  small: true;
+  small?: true;
 }
 
 export const ComponentCard: React.FC<ComponentCardProps> = ({
