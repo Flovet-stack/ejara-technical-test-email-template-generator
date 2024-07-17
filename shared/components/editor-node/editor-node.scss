@@ -20,10 +20,10 @@
       }
     }
     .custom-button {
-      opacity: 1;
+      display: flex;
     }
     button.drag-button {
-      opacity: 1;
+      display: flex;
     }
   }
   .main {
@@ -54,27 +54,24 @@
     }
   }
   .custom-button {
-    opacity: 0;
+    display: none;
+    position: absolute;
+    left: 0;
+    transform: translateX(calc(-100% - $spacing));
     &.sidebar-section-button {
       &:hover {
         background-color: $white;
       }
     }
   }
-  .custom-button {
-    position: absolute;
-    left: 0;
-    transform: translateX(calc(-100% - $spacing));
-  }
   button.drag-button {
-    opacity: 0;
     padding: 0;
     border-radius: $border-radius;
     font-size: 14px;
     height: auto;
     min-height: 35px;
     transition-duration: $transition-duration;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;

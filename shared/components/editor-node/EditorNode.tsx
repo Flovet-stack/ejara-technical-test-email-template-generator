@@ -22,7 +22,9 @@ interface EditorNodeProps {
 export const EditorNode: React.FC<EditorNodeProps> = ({ node }) => {
   const dispatch = useDispatch();
   const editorState = useAppSelector((store: RootState) => store.editor);
+  const defaultState = useAppSelector((store: RootState) => store.default);
 
+  const { theme } = defaultState;
   const { selectedComponent } = editorState;
   const { id } = node;
 
@@ -55,7 +57,7 @@ export const EditorNode: React.FC<EditorNodeProps> = ({ node }) => {
 
   return (
     <div
-      className={`editor-node ${selectedComponent?.id === id && "selected"}`}
+      className={`editor-node ${selectedComponent?.id === id && "selected"} `}
       ref={setNodeRef}
       style={style}
     >
@@ -69,7 +71,7 @@ export const EditorNode: React.FC<EditorNodeProps> = ({ node }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: baseTemplate }} />
       </div>
-      <button className="drag-button" {...listeners} {...attributes}>
+      <button className={`drag-button ${theme}`} {...listeners} {...attributes}>
         <DragIcon />
       </button>
     </div>

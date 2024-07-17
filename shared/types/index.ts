@@ -66,7 +66,7 @@ export enum COMPONENT_ATTRIBUTE {
   BUTTON_STYLE = "buttonStyle",
   BUTTON_COLOR = "buttonColor",
   ALT_TEXT = "altText",
-  CLICK_THROUGH_URL = "clickThroughUrl",
+  // CLICK_THROUGH_URL = "clickThroughUrl",
   DIVIDER_COLOR = "dividerColor",
   BORDER_WIDTH = "borderWidth",
   BORDER_COLOR = "borderColor",
@@ -76,7 +76,7 @@ export enum COMPONENT_ATTRIBUTE {
 
 export type ComponentAttributeValues = {
   [COMPONENT_ATTRIBUTE.TEXT_CONTENT]: string;
-  [COMPONENT_ATTRIBUTE.HEADING]: string;
+  // [COMPONENT_ATTRIBUTE.HEADING]: string;
   [COMPONENT_ATTRIBUTE.TEXT_COLOR]: string;
   [COMPONENT_ATTRIBUTE.BACKGROUND_COLOR]: string;
   [COMPONENT_ATTRIBUTE.FONT_FAMILY]: string;
@@ -93,7 +93,7 @@ export type ComponentAttributeValues = {
   [COMPONENT_ATTRIBUTE.BUTTON_STYLE]: "rectangle" | "rounded" | "pill";
   [COMPONENT_ATTRIBUTE.BUTTON_COLOR]: string;
   [COMPONENT_ATTRIBUTE.ALT_TEXT]: string;
-  [COMPONENT_ATTRIBUTE.CLICK_THROUGH_URL]: string;
+  // [COMPONENT_ATTRIBUTE.CLICK_THROUGH_URL]: string;
   [COMPONENT_ATTRIBUTE.DIVIDER_COLOR]: string;
   [COMPONENT_ATTRIBUTE.BORDER_WIDTH]: string | number;
   [COMPONENT_ATTRIBUTE.BORDER_COLOR]: string;

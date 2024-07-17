@@ -30,7 +30,6 @@ export const InputField: React.FC<InputFieldProps> = ({
   ...props
 }) => {
   const defaultState = useAppSelector((store: RootState) => store.default);
-  console.log("🚀 ~ value in field:", props.value);
 
   let InputComponent: any = "input";
   if (textarea) {

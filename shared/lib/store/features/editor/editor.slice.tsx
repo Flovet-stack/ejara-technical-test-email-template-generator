@@ -1,4 +1,8 @@
-import { COMPONENT, EditorNodeType, Template } from "@/shared/types";
+import {
+  ComponentAttributeValues,
+  EditorNodeType,
+  Template,
+} from "@/shared/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface EditorState {
@@ -37,6 +41,36 @@ const editorSlice = createSlice({
     setEditorNodes(state, { payload }: PayloadAction<EditorNodeType[]>) {
       state.dnd.nodes = payload;
     },
+    setSelectedComponentDataValue(
+      state,
+      {
+        payload,
+      }: PayloadAction<{ key: keyof ComponentAttributeValues; value: any }>
+    ) {
+      const { key, value } = payload;
+      if (state.selectedComponent) {
+        state.selectedComponent = {
+          ...state.selectedComponent,
+          data: {
+            ...state.selectedComponent?.data,
+            [key]: value,
+          },
+        };
+      }
+    },
+    updateNodesOnAttributeChange(state) {
+      const { selectedComponent, dnd } = state;
+      const { nodes } = dnd;
+
+      if (selectedComponent && nodes.length > 0) {
+        const updatedNodes = nodes.map((node) =>
+          node.id === selectedComponent.id
+            ? { ...node, data: { ...selectedComponent.data } }
+            : node
+        );
+        state.dnd.nodes = updatedNodes;
+      }
+    },
   },
 });
 
@@ -45,5 +79,7 @@ export const {
   setSelectedComponent,
   setSelectedTemplate,
   setEditorNodes,
+  setSelectedComponentDataValue,
+  updateNodesOnAttributeChange,
 } = editorSlice.actions;
 export default editorSlice.reducer;

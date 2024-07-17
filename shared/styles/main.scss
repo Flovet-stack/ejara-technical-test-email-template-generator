@@ -266,6 +266,70 @@ form {
   }
 }
 
+.field {
+  label {
+    display: block;
+    font-size: 0.75em;
+    margin-bottom: 0.15rem;
+    color: $black;
+    text-transform: lowercase;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  input,
+  select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid $light-theme-border;
+    border-radius: $border-radius;
+    padding: 0 0.35rem;
+    font-size: 0.8em;
+    outline: none !important;
+    background-color: $light-theme-bg;
+    color: $black;
+  }
+  textarea {
+    width: 100%;
+    height: 70px;
+    border: 1px solid $light-theme-border;
+    border-radius: $border-radius;
+    padding: 0.35rem;
+    font-size: 0.8em;
+    background-color: $light-theme-bg;
+    color: $black;
+    transition-duration: $transition-duration;
+  }
+  input,
+  select {
+    &:focus {
+      border-color: $black;
+      transition-duration: $transition-duration;
+    }
+  }
+  &.dark {
+    label {
+      color: $white;
+    }
+    input,
+    select {
+      border: 1px solid $dark-theme-border;
+      background-color: $dark-theme-bg;
+      color: $white;
+    }
+    textarea {
+      border: 1px solid $dark-theme-border;
+      background-color: $dark-theme-bg;
+      color: $white;
+    }
+    input,
+    select {
+      &:focus {
+        border-color: $white;
+      }
+    }
+  }
+}
 .ant-form-item {
   margin-bottom: 2px !important;
 }

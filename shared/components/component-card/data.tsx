@@ -53,7 +53,7 @@ const initialButtonData: Partial<ComponentAttributeValues> = {
 const initialImageData: Partial<ComponentAttributeValues> = {
   [COMPONENT_ATTRIBUTE.URL]: "https://via.placeholder.com/150",
   [COMPONENT_ATTRIBUTE.ALT_TEXT]: "Placeholder Image",
-  [COMPONENT_ATTRIBUTE.CLICK_THROUGH_URL]: "#",
+  // [COMPONENT_ATTRIBUTE.CLICK_THROUGH_URL]: "#",
   [COMPONENT_ATTRIBUTE.WIDTH]: "150px",
   [COMPONENT_ATTRIBUTE.HEIGHT]: "auto",
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "center",

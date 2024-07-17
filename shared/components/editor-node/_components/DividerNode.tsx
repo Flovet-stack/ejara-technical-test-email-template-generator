@@ -1,5 +1,5 @@
 import { ComponentAttributeValues } from "@/shared/types";
-import { Button, Heading, Hr, Section } from "@react-email/components";
+import { Hr } from "@react-email/components";
 import React, { CSSProperties } from "react";
 
 interface DividerNodeProps {

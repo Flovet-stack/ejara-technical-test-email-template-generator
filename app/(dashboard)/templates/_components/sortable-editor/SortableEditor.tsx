@@ -11,7 +11,7 @@ import {
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   arrayMove,
   SortableContext,
@@ -19,7 +19,10 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import "./sortable-editor.scss";
-import { setEditorNodes } from "@/shared/lib/store/features";
+import {
+  setEditorNodes,
+  updateNodesOnAttributeChange,
+} from "@/shared/lib/store/features";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
 export const SortableEditor = () => {
@@ -48,19 +51,10 @@ export const SortableEditor = () => {
     })
   );
 
-  // return (
-  //   <div className="sortable-editor">
-  //     <div className="column">
-  //       {nodes.length > 0 ? (
-  //         nodes.map((node) => <EditorNode key={node.id} node={node} />)
-  //       ) : (
-  //         <div className="starting-node">
-  //           <AddComponentButton />
-  //         </div>
-  //       )}
-  //     </div>
-  //   </div>
-  // );
+  useEffect(() => {
+    dispatch(updateNodesOnAttributeChange());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [editorState.selectedComponent]);
 
   return (
     <div className="sortable-editor">
