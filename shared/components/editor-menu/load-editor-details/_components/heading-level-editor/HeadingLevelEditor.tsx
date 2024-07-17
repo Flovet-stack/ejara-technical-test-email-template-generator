@@ -48,17 +48,17 @@ export const HeadingLevelEditor = () => {
     selectedComponent?.data[COMPONENT_ATTRIBUTE.HEADING_LEVEL];
 
   const fontSizeMap = {
-    h1: 24,
-    h2: 22,
-    h3: 20,
-    h4: 18,
-    h5: 16,
-    h6: 14,
+    h1: "24px",
+    h2: "22px",
+    h3: "20px",
+    h4: "18px",
+    h5: "16px",
+    h6: "14px",
   };
 
   type Heading = keyof typeof fontSizeMap;
 
-  const getFontSize = (value: string): number | undefined => {
+  const getFontSize = (value: string): string | undefined => {
     const key = value.toLowerCase() as Heading;
     return fontSizeMap[key];
   };

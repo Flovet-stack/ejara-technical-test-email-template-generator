@@ -4,14 +4,16 @@ import React, { useState } from "react";
 import "./dashboard-header.scss";
 import { CustomButton } from "../custom-button/CustomButton";
 import { AddIcon } from "@/shared/icons";
-import { useAppSelector } from "@/shared/lib/store/store.hooks";
+import { useAppDispatch, useAppSelector } from "@/shared/lib/store/store.hooks";
 import { RootState } from "@/shared/lib/store/store";
 import { EDITOR } from "@/shared/types";
 import { ModalWrapper } from "../modal-wrapper/ModalWrapper";
 import { Modal } from "antd";
 import { CreateTemplateForm } from "../create-template-form/CreateTemplateForm";
+import { setShowPreview, setShowTest } from "@/shared/lib/store/features";
 
 export const DashboardHeader = () => {
+  const dispatch = useAppDispatch();
   const defaultState = useAppSelector((store: RootState) => store.default);
   const editorState = useAppSelector((store: RootState) => store.editor);
   const [isCreateTemplateModalOpen, setIsCreateTemplateModalOpen] =
@@ -19,6 +21,16 @@ export const DashboardHeader = () => {
 
   const { theme, leftEditorMenu } = defaultState;
   const { selectedTemplate } = editorState;
+
+  const togglePreview = () => {
+    dispatch(setShowPreview(!editorState.showPreview));
+    dispatch(setShowTest(false));
+  };
+
+  const toggleTest = () => {
+    dispatch(setShowTest(!editorState.showPreview));
+    dispatch(setShowPreview(false));
+  };
 
   const showModal = () => {
     setIsCreateTemplateModalOpen(true);
@@ -68,13 +80,13 @@ export const DashboardHeader = () => {
               theme="light"
               text="Preview"
               fullWidth
-              onClick={showModal}
+              onClick={togglePreview}
             />
             <CustomButton
               theme="black"
-              text="Save"
+              text="Test Template"
               fullWidth
-              onClick={showModal}
+              onClick={toggleTest}
             />
           </div>
         )}

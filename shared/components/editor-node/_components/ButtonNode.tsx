@@ -39,6 +39,14 @@ export const ButtonNode: React.FC<ButtonNodeProps> = ({ data }) => {
   const sectionStyles: CSSProperties = {
     padding,
     backgroundColor,
+    textAlign: alignment,
+    display: "flex",
+    justifyContent:
+      alignment === "center"
+        ? "center"
+        : alignment === "left"
+        ? "flex-start"
+        : "flex-end",
     margin: 0,
   };
 
@@ -54,13 +62,16 @@ export const ButtonNode: React.FC<ButtonNodeProps> = ({ data }) => {
     borderWidth,
     borderColor,
     margin: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   };
 
   return (
-    <Section style={sectionStyles}>
+    <div style={sectionStyles}>
       <Button style={buttonStyles} href={url}>
         {textContent}
       </Button>
-    </Section>
+    </div>
   );
 };

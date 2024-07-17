@@ -38,12 +38,6 @@ export const EditorNode: React.FC<EditorNodeProps> = ({ node }) => {
 
   const baseTemplate = render(<LoadComponentType node={node} />, {});
 
-  // const baseTemplate = render(
-  //   <Html lang="en">
-  //   </Html>,
-  //   {}
-  // );
-
   // const tempHTML = render(
   //   <div dangerouslySetInnerHTML={{ __html: template }} />,
   //   {
