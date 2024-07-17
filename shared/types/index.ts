@@ -81,7 +81,7 @@ export type ComponentAttributeValues = {
   [COMPONENT_ATTRIBUTE.BACKGROUND_COLOR]: string;
   [COMPONENT_ATTRIBUTE.FONT_FAMILY]: string;
   [COMPONENT_ATTRIBUTE.FONT_WEIGHT]: "regular" | "bold"; // Specific type
-  [COMPONENT_ATTRIBUTE.FONT_SIZE]: number;
+  [COMPONENT_ATTRIBUTE.FONT_SIZE]: string;
   [COMPONENT_ATTRIBUTE.ALIGNMENT]: "left" | "center" | "right";
   [COMPONENT_ATTRIBUTE.HEADING_LEVEL]: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   [COMPONENT_ATTRIBUTE.PADDING]: string;

@@ -24,6 +24,7 @@ export const TextNode: React.FC<TextNodeProps> = ({ data }) => {
     fontSize,
     fontWeight,
     margin: 0,
+    textAlign: alignment,
   };
 
   return <Text style={styles}>{textContent}</Text>;

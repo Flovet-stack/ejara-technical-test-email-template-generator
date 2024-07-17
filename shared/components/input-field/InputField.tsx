@@ -68,7 +68,7 @@ export const InputField: React.FC<InputFieldProps> = ({
             value={props.value}
             type={InputComponent === "input" ? (type ? "number" : "") : ""}
           >
-            <option value=""></option>
+            {/* <option value=""></option> */}
             {options &&
               options.map((option: any, index: number) => (
                 <option key={index} value={option.value}>

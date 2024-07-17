@@ -15,36 +15,6 @@ const PaddingField: React.FC<PaddingFieldProps> = ({
   padding,
   handleChange,
 }) => {
-  const updatePadding = (position: string, value: string) => {
-    const padding = {
-      top: "1px",
-      right: "1px",
-      bottom: "1px",
-      left: "1px",
-    };
-
-    switch (position) {
-      case "top":
-        padding.top = value;
-        break;
-      case "right":
-        padding.right = value;
-        break;
-      case "bottom":
-        padding.bottom = value;
-        break;
-      case "left":
-        padding.left = value;
-        break;
-      default:
-        throw new Error(
-          "Invalid position. Use 'top', 'right', 'bottom', or 'left'."
-        );
-    }
-
-    return `${padding.top} ${padding.right} ${padding.bottom} ${padding.left}`;
-  };
-
   const parsePaddingString = (paddingString: string) => {
     const parts = paddingString.split(" ");
 
@@ -64,6 +34,35 @@ const PaddingField: React.FC<PaddingFieldProps> = ({
     };
   };
 
+  const updatePadding = (
+    currentPadding: string,
+    position: string,
+    value: string
+  ) => {
+    const parsedPadding = parsePaddingString(currentPadding);
+
+    switch (position) {
+      case "top":
+        parsedPadding.top = value;
+        break;
+      case "right":
+        parsedPadding.right = value;
+        break;
+      case "bottom":
+        parsedPadding.bottom = value;
+        break;
+      case "left":
+        parsedPadding.left = value;
+        break;
+      default:
+        throw new Error(
+          "Invalid position. Use 'top', 'right', 'bottom', or 'left'."
+        );
+    }
+
+    return `${parsedPadding.top} ${parsedPadding.right} ${parsedPadding.bottom} ${parsedPadding.left}`;
+  };
+
   return (
     <div className="flex gap-1">
       <InputField
@@ -71,28 +70,36 @@ const PaddingField: React.FC<PaddingFieldProps> = ({
         value={parsePaddingString(padding).top}
         placeholder="Enter content here"
         label="top"
-        onChange={(e) => handleChange(updatePadding("top", e.target.value))}
+        onChange={(e) =>
+          handleChange(updatePadding(padding, "top", e.target.value))
+        }
       />
       <InputField
         name="text-content"
         value={parsePaddingString(padding).right}
         placeholder="Enter content here"
         label="right"
-        onChange={(e) => handleChange(updatePadding("right", e.target.value))}
+        onChange={(e) =>
+          handleChange(updatePadding(padding, "right", e.target.value))
+        }
       />
       <InputField
         name="text-content"
         value={parsePaddingString(padding).bottom}
         placeholder="Enter content here"
         label="bottom"
-        onChange={(e) => handleChange(updatePadding("bottom", e.target.value))}
+        onChange={(e) =>
+          handleChange(updatePadding(padding, "bottom", e.target.value))
+        }
       />
       <InputField
         name="text-content"
         label="left"
         value={parsePaddingString(padding).left}
         placeholder="Enter content here"
-        onChange={(e) => handleChange(updatePadding("left", e.target.value))}
+        onChange={(e) =>
+          handleChange(updatePadding(padding, "left", e.target.value))
+        }
       />
     </div>
   );
