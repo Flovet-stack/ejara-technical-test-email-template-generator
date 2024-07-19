@@ -1,0 +1,19 @@
+@import "@/shared/styles/variables";
+@import "@/shared/styles/utils";
+
+.html-preview {
+  width: 700px;
+  max-width: 800%;
+  height: fit-content;
+  background-color: $white;
+  padding: 1rem;
+  pre {
+    width: 100%;
+    overflow-x: scroll;
+    padding: 1rem;
+    code {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

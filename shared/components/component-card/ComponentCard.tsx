@@ -9,6 +9,7 @@ import {
   setEditorNodes,
   setEditorState,
   setSelectedComponent,
+  VIEWS,
 } from "@/shared/lib/store/features";
 
 interface ComponentCardProps {
@@ -43,6 +44,7 @@ export const ComponentCard: React.FC<ComponentCardProps> = ({
           nodes: newNodes,
         },
         selectedComponent: node,
+        showView: VIEWS.EDITOR,
       })
     );
   };

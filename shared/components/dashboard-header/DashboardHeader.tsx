@@ -10,7 +10,8 @@ import { EDITOR } from "@/shared/types";
 import { ModalWrapper } from "../modal-wrapper/ModalWrapper";
 import { Modal } from "antd";
 import { CreateTemplateForm } from "../create-template-form/CreateTemplateForm";
-import { setShowPreview, setShowTest } from "@/shared/lib/store/features";
+import { setShowView, VIEWS } from "@/shared/lib/store/features";
+import { DeviceToggler } from "./DeviceToggler";
 
 export const DashboardHeader = () => {
   const dispatch = useAppDispatch();
@@ -23,13 +24,11 @@ export const DashboardHeader = () => {
   const { selectedTemplate } = editorState;
 
   const togglePreview = () => {
-    dispatch(setShowPreview(!editorState.showPreview));
-    dispatch(setShowTest(false));
+    dispatch(setShowView(VIEWS.PREVIEW));
   };
 
   const toggleTest = () => {
-    dispatch(setShowTest(!editorState.showPreview));
-    dispatch(setShowPreview(false));
+    dispatch(setShowView(VIEWS.TEST));
   };
 
   const showModal = () => {
@@ -51,7 +50,12 @@ export const DashboardHeader = () => {
           </div>
         </div>
       </div>
-      <div className="center">DashboardHeader</div>
+      <div className="center">
+        <div className="flex justify-between">
+          <DeviceToggler />
+          <p>test</p>
+        </div>
+      </div>
       <div className="corner">
         {leftEditorMenu === EDITOR.TEMPLATES_MENU && (
           <>

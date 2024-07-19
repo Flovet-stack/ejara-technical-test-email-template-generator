@@ -5,11 +5,18 @@ import {
 } from "@/shared/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export enum VIEWS {
+  HTML = "html",
+  PREVIEW = "preview",
+  TEST = "test",
+  EDITOR = "editor",
+  EMPTY = "empty",
+}
+
 interface EditorState {
   selectedTemplate: Template | null;
   selectedComponent: EditorNodeType | null;
-  showPreview: boolean;
-  showTest: boolean;
+  showView: VIEWS;
   dnd: {
     nodes: EditorNodeType[];
   };
@@ -20,8 +27,7 @@ const tempNodes: EditorNodeType[] = [];
 const initialState: EditorState = {
   selectedTemplate: null,
   selectedComponent: null,
-  showPreview: false,
-  showTest: false,
+  showView: VIEWS.EMPTY,
   dnd: {
     nodes: tempNodes,
   },
@@ -35,6 +41,7 @@ const editorSlice = createSlice({
       state.selectedTemplate = payload.selectedTemplate;
       state.selectedComponent = payload.selectedComponent;
       state.dnd = payload.dnd;
+      state.showView = payload.showView;
     },
     setSelectedComponent(state, { payload }: PayloadAction<EditorNodeType>) {
       state.selectedComponent = payload;
@@ -42,11 +49,8 @@ const editorSlice = createSlice({
     setSelectedTemplate(state, { payload }: PayloadAction<Template>) {
       state.selectedTemplate = payload;
     },
-    setShowPreview(state, { payload }: PayloadAction<boolean>) {
-      state.showPreview = payload;
-    },
-    setShowTest(state, { payload }: PayloadAction<boolean>) {
-      state.showTest = payload;
+    setShowView(state, { payload }: PayloadAction<VIEWS>) {
+      state.showView = payload;
     },
     setEditorNodes(state, { payload }: PayloadAction<EditorNodeType[]>) {
       state.dnd.nodes = payload;
@@ -91,7 +95,6 @@ export const {
   setEditorNodes,
   setSelectedComponentDataValue,
   updateNodesOnAttributeChange,
-  setShowPreview,
-  setShowTest,
+  setShowView,
 } = editorSlice.actions;
 export default editorSlice.reducer;

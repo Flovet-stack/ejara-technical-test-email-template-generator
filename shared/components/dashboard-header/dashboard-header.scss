@@ -45,6 +45,7 @@
   }
   .center {
     flex-grow: 1;
+    padding: $spacing;
   }
   &.dark {
     background-color: $black;
